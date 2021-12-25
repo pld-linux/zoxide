@@ -13,6 +13,7 @@ Source1:	%{name}-crates-%{crates_ver}.tar.xz
 # Source1-md5:	2850666699cb60867f03368f608988ee
 URL:		https://github.com/ajeetdsouza/zoxide
 BuildRequires:	cargo
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.004
 BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
