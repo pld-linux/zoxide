@@ -1,16 +1,16 @@
-%define		crates_ver	0.8.0
+%define		crates_ver	0.8.1
 
 Summary:	A smarter cd command
 Name:		zoxide
-Version:	0.8.0
+Version:	0.8.1
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/ajeetdsouza/zoxide/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6783966c8e57061bc3f1d0579410f88d
+# Source0-md5:	78a3480cbc84e9ceca358dfc01b9acd1
 # ./create-crates.sh
 Source1:	%{name}-crates-%{crates_ver}.tar.xz
-# Source1-md5:	2850666699cb60867f03368f608988ee
+# Source1-md5:	38d4f4a19246bb7bf53762dc0d0954cd
 URL:		https://github.com/ajeetdsouza/zoxide
 BuildRequires:	cargo
 BuildRequires:	rpm-build >= 4.6
