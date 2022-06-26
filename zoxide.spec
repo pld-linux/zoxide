@@ -17,6 +17,7 @@ BuildRequires:	rpmbuild(macros) >= 2.004
 BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Suggests:	fzf
 ExclusiveArch:	%{rust_arches}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
