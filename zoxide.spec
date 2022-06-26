@@ -83,6 +83,8 @@ export CARGO_HOME="$(pwd)/.cargo"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 export CARGO_HOME="$(pwd)/.cargo"
 
 %cargo_install --frozen --root $RPM_BUILD_ROOT%{_prefix} --path $PWD
@@ -92,6 +94,8 @@ install -Dp contrib/completions/zoxide.bash $RPM_BUILD_ROOT%{bash_compdir}/zoxid
 install -Dp contrib/completions/zoxide.fish $RPM_BUILD_ROOT%{fish_compdir}/zoxide.fish
 install -Dp contrib/completions/_zoxide $RPM_BUILD_ROOT%{zsh_compdir}/_zoxide
 
+cp -p man/man1/*.1 $RPM_BUILD_ROOT%{_mandir}/man1/
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -99,6 +103,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.md README.md
 %attr(755,root,root) %{_bindir}/zoxide
+%{_mandir}/man1/zoxide.1*
+%{_mandir}/man1/zoxide-add.1*
+%{_mandir}/man1/zoxide-import.1*
+%{_mandir}/man1/zoxide-init.1*
+%{_mandir}/man1/zoxide-query.1*
+%{_mandir}/man1/zoxide-remove.1*
 
 %files -n bash-completion-zoxide
 %defattr(644,root,root,755)
