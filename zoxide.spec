@@ -1,15 +1,15 @@
-%define		crates_ver	0.9.5
+%define		crates_ver	0.9.8
 
 Summary:	A smarter cd command
 Name:		zoxide
-Version:	0.9.5
+Version:	0.9.8
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/ajeetdsouza/zoxide/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	1bb85bcbab1ed8510f9512421cb5d716
+# Source0-md5:	41fad174f0b1a90fd123fbab2d1e7d78
 Source1:	%{name}-crates-%{crates_ver}.tar.xz
-# Source1-md5:	2ff9a36325fb4bc08ca9df4ebdb0b235
+# Source1-md5:	776b91856ca042ebe5ae306fb2768a1d
 URL:		https://github.com/ajeetdsouza/zoxide
 BuildRequires:	cargo
 BuildRequires:	rpm-build >= 4.6
@@ -88,7 +88,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 export CARGO_HOME="$(pwd)/.cargo"
 
 %cargo_install --frozen --root $RPM_BUILD_ROOT%{_prefix} --path $PWD
-%{__rm} $RPM_BUILD_ROOT%{_prefix}/.crates*
 
 install -Dp contrib/completions/zoxide.bash $RPM_BUILD_ROOT%{bash_compdir}/zoxide
 install -Dp contrib/completions/zoxide.fish $RPM_BUILD_ROOT%{fish_compdir}/zoxide.fish
